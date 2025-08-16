@@ -36,6 +36,7 @@ namespace StorySpoilerBo
 
             _client = new RestClient(options);
         }
+
         [TearDown]
         public void TearDown()
         {
@@ -68,10 +69,10 @@ namespace StorySpoilerBo
             Assert.That(json.StoryId, Is.Not.Null);
             _storyId = json.StoryId;
         }
+
         //Create a test that sends a PUT request to edit the story using the StoryId from the story creation test as a path variable.
         //Assert that the response status code is OK(200).
         //Assert that the response message indicates the story was "Successfully edited".
-
         [Test, Order(2)]
         public void Edit_Story_Spoiler()
         {
@@ -92,7 +93,6 @@ namespace StorySpoilerBo
         //Create a test to send a GET request to list all stories.
         //Assert that the response status code is OK(200).
         //Assert that the response contains a non - empty array.
-
         [Test, Order(3)]
         public void GetAll_StorySpoilers ()
         {
@@ -108,7 +108,6 @@ namespace StorySpoilerBo
         //Create test that sends a DELETE request using the StoryId from the created story.
         //Assert that the response status code is OK(200).
         //Assert that the response message is "Deleted successfully!".
-
         [Test, Order(4)]
         public void Delete_StorySpoiler() 
         {
@@ -123,7 +122,6 @@ namespace StorySpoilerBo
         //Write a test that attempts to create a story with missing required fields (Title, Description).
         //Send the POST request with the incomplete data.
         //Assert that the response status code is BadRequest (400).
-
         [Test, Order(5)]
         public void StorySpoiler_Without_RequiredFields()
         {
@@ -140,7 +138,6 @@ namespace StorySpoilerBo
         //Write a test to send a PUT request to edit a story with a StoryId that does not exist.
         //Assert that the response status code is NotFound(404).
         //Assert that the response message indicates "No spoilers...".
-
         [Test, Order(6)]
         public void Edit_Non_existingStorySpoiler()
         {
@@ -162,7 +159,6 @@ namespace StorySpoilerBo
         //Write a test to send a DELETE request to edit a story with a StoryId that does not exist.
         //Assert that the response status code is Bad request(400).
         //Assert that the response message indicates "Unable to delete this story spoiler!".
-
         [Test, Order(7)]
         public void Delete_NonExistingStorySpoiler()
         {

@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace StorySpoilerBo.Models
 {
@@ -21,7 +15,5 @@ namespace StorySpoilerBo.Models
         [JsonPropertyName("url")]
 
         public string? Url { get; set; }
-
     }
-
 }
